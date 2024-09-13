@@ -87,7 +87,7 @@ const CoachProfile = () => {
       })
       .catch((error) => {
         if (error.response) {
-          toast.error('Signup failed. Please try again.');
+          toast.error('Booking Failed. Please try again.');
           console.error("Error booking workout:");
         } else {
           console.error("Network or CORS error");
