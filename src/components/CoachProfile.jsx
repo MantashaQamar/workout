@@ -25,7 +25,8 @@ const CoachProfile = () => {
   const navigate = useNavigate();
   const {person} = location.state;
   console.log("coach email:", person.email);
-  
+  const truncatedName = person.name.length > 12 ? `${person.name.slice(0, 13)}` : person.name;
+
   const [selectedDate, setSelectedDate] = useState(new Date());
   const [selectedTimeSlot, setSelectedTimeSlot] = useState(null);
   const [timeSlots, setTimeSlots] = useState([
@@ -192,15 +193,15 @@ const CoachProfile = () => {
         <div style={{ marginTop:'40px', marginLeft: '10px', marginBottom: '5%'}}>
           <Breadcrumbs aria-label="breadcrumb">
             <Button onClick={() => navigate('/coaches')} style={{ color: 'black', fontSize: '16px',textTransform:'none' }}>
-              Coaches {'>'} {person.name}
+              Coaches {'>'} {truncatedName}
             </Button>
           </Breadcrumbs>
         </div>
-          <Card sx={{ maxWidth: 316, minWidth: 250, borderRadius: '16px', margin: 1 , height:'600px', boxShadow: '0px 0px 11px 0px #0000001F'}}>
+          <Card sx={{ maxWidth: 316, minWidth: 250, borderRadius: '16px', margin: 1 , height:'550px', boxShadow: '0px 0px 11px 0px #0000001F'}}>
             <CardMedia component="img" image={person.image} height={270} alt="Gym Trainer" />
             <CardContent>
               <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-                <Typography variant="h6">{person.name}</Typography>
+                <Typography variant="h6">{truncatedName}</Typography>
                 <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
                 <Typography>{person.rating}</Typography>
     
