@@ -3,7 +3,7 @@ import { jwtDecode } from 'jwt-decode';
 import { useCallback, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-export const ApiBaseUrl = 'https://f1ejdv5ij2.execute-api.eu-west-2.amazonaws.com'
+export const ApiBaseUrl = 'https://er9bk9xvob.execute-api.eu-west-2.amazonaws.com'
 
 export const useLogout = () => {
   const navigate = useNavigate();
